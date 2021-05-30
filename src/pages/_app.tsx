@@ -6,8 +6,9 @@ import FirebaseApp from '../FirebaseApp'
 
 import '../styles/globals.css'
 
-console.log(firebaseConfig)
-firebase.initializeApp(firebaseConfig)
+if (firebase.apps.length === 0) {
+  firebase.initializeApp(firebaseConfig)
+}
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
