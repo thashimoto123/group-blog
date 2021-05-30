@@ -7,7 +7,7 @@ module.exports = {
   },
   parserOptions: { ecmaVersion: 8 }, // to enable features such as async/await
   ignorePatterns: ['node_modules/*', '.next/*', '.out/*', '!.prettierrc.js'], // We don't want to lint generated files nor node_modules, but we want to lint .prettierrc.js (ignored by default by eslint)
-  extends: ['eslint:recommended'],
+  extends: ['eslint:recommended', 'prettier'],
   overrides: [
     // This configuration will apply only to TypeScript files
     {
@@ -25,9 +25,15 @@ module.exports = {
         'plugin:react/recommended', // React rules
         'plugin:react-hooks/recommended', // React hooks rules
         'plugin:jsx-a11y/recommended', // Accessibility rules
-        'plugin:prettier/recommended',
       ],
       rules: {
+        "semi": ["error", "never", {"beforeStatementContinuationChars": "never"}],
+        "semi-spacing": ["error", {"after": true, "before": false}],
+        "semi-style": ["error", "first"],
+        "no-extra-semi": "error",
+        "no-unexpected-multiline": "error",
+        "no-unreachable": "error",
+
         // We will use TypeScript's types for component props instead
         'react/prop-types': 'off',
 
@@ -41,15 +47,9 @@ module.exports = {
         '@typescript-eslint/no-unused-vars': ['error'],
 
         // I suggest this setting for requiring return types on functions only where useful
-        '@typescript-eslint/explicit-function-return-type': [
-          'warn',
-          {
-            allowExpressions: true,
-            allowConciseArrowFunctionExpressionsStartingWithVoid: true,
-          },
-        ],
+        '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
       },
-      'prettier/prettier': ['error', {}, { usePrettierrc: true }],
     },
   ],
 }
