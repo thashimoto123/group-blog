@@ -1,11 +1,11 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyCalxCkplzXACxhlUbcMjEC87AveQA3GzU",
-  authDomain: "group-blog.firebaseapp.com",
-  projectId: "group-blog",
-  storageBucket: "group-blog.appspot.com",
-  messagingSenderId: "647502189452",
-  appId: "1:647502189452:web:9d7f02af98f99fa92d7ca9",
-  measurementId: "G-84Z1HBCB8X"
+  apiKey: process.env.NEXT_PUBLIC_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_MEASUREMENT_ID
 }
 
 export default firebaseConfig
