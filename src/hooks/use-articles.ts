@@ -1,5 +1,5 @@
 import { useContext, useState, useRef, useEffect } from 'react'
-import { FirebaseContext } from '../contexts'
+import { FirebaseContext } from 'src/contexts'
 import firebase from 'firebase'
 
 // TODO: あとで別ファイルにまとめる
