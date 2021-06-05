@@ -9,9 +9,10 @@ const FirebaseApp: VFC<{
   children: ReactNode
 }> = ({ children }) => {
   const db = firebase.firestore()
-
+  const user = firebase.auth().currentUser
+  console.log(user)
   return (
-    <FirebaseContext.Provider value={{ db }}>
+    <FirebaseContext.Provider value={{ db, user }}>
       {children}
     </FirebaseContext.Provider>
   )
