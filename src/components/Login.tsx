@@ -1,9 +1,12 @@
 import { VFC, useContext, useState } from 'react'
+import { useRouter } from 'next/router'
 import { FirebaseContext } from '../contexts'
 import firebase from 'firebase'
 
 const Login: VFC = () => {
+  const router = useRouter()
   const { user } = useContext(FirebaseContext)
+  console.log(user)
   if (user) {
     alert('logined')
   }
@@ -16,6 +19,7 @@ const Login: VFC = () => {
         // Signed in
         const user = userCredential.user
         console.log(user)
+        // router.push('/admin')
       })
       .catch((error) => {
         console.log(error)
