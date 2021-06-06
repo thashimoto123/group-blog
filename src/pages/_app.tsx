@@ -8,7 +8,7 @@ import '../styles/globals.css'
 
 if (firebase.apps.length === 0) {
   firebase.initializeApp(firebaseConfig)
-  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
