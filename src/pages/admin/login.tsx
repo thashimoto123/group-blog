@@ -1,15 +1,19 @@
+import { VFC } from 'react'
 import Head from 'next/head'
-import Login from 'src/components/Login'
+import LoginForm from 'src/components/LoginForm'
 
-export default function LoginPage() {
+const Login: VFC = () => {
   return (
     <div>
       <Head>
-        <title>Login</title>
+        <title>ログインページ</title>
       </Head>
       <main>
-        <Login />
+        <h1>ログインページ</h1>
+        <LoginForm />
       </main>
     </div>
   )
 }
+
+export default Login

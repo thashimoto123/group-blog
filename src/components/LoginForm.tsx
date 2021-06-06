@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { FirebaseContext } from '../contexts'
 import { login } from 'src/utils/auth'
 
-const Login: VFC = () => {
+const LoginForm: VFC = () => {
   const router = useRouter()
   const { user } = useContext(FirebaseContext)
   const [email, setEmail] = useState('')
@@ -28,10 +28,10 @@ const Login: VFC = () => {
       <form onSubmit={(e) => handleSubmit(e)}>
         <input type="text" value={email} placeholder='email address' onChange={(e) => setEmail(e.target.value)} />
         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-        <button>Login</button>
+        <button>Form</button>
       </form>
     </div>
   )
 }
 
-export default Login
+export default LoginForm
