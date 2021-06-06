@@ -2,7 +2,7 @@ import { VFC, useContext, useState } from 'react'
 import { FirebaseContext } from '../contexts'
 import firebase from 'firebase'
 
-const Signin: VFC = () => {
+const Login: VFC = () => {
   const { user } = useContext(FirebaseContext)
   if (user) {
     alert('logined')
@@ -11,7 +11,7 @@ const Signin: VFC = () => {
   const [password, setPassword] = useState('')
 
   const handleClick = () => {
-    firebase.auth().createUserWithEmailAndPassword(email, password)
+    firebase.auth().signInWithEmailAndPassword(email, password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user
@@ -30,4 +30,4 @@ const Signin: VFC = () => {
   </div>
 }
 
-export default Signin
+export default Login

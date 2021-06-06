@@ -1,8 +1,9 @@
 import { VFC } from 'react'
-import Signin from '../../components/Signin'
+import useRequireLogin from 'src/hooks/useRequireLogin'
 
 const Admin: VFC = () => {
-  return <Signin />
+  useRequireLogin()
+  return <div>admin page</div>
 }
 
 export default Admin
